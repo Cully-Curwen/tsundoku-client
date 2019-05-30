@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/App.css';
 import { Switch, Route } from 'react-router-dom'
-import UserLogin from './UserLogin';
+import LoginAndSignup from './LoginAndSignup';
 import UserSignup from './UserSignup';
 import CuratorLogin from './CuratorLogin';
 import CuratorSignup from './CuratorSignup';
-import Welcome from './Welcome';
+import Splash from './Splash';
 import User from './User';
 import Curator from './Curator';
 
@@ -17,13 +17,14 @@ function App() {
       </div>
       <div className="body">
         <Switch>
-            <Route exact path="/user/login" render={UserLogin} />
+            {/* <Route exact path="/user/login" render={LoginAndSignup} />
             <Route exact path="/user/signup" render={UserSignup} />
             <Route exact path="/curator/login" render={CuratorLogin} />
-            <Route exact path="/curator/signup" render={CuratorSignup} />
-            <Route path="/user" render={User} />
-            <Route path="/curator" render={Curator} />
-            <Route path="/" render={Welcome} />
+            <Route exact path="/curator/signup" render={CuratorSignup} /> */}
+            <Route exact path="/user" render={User} />
+            <Route exact path="/curator" render={Curator} />
+            <Route path="/" render={Splash} />
+            <Route render={props => <h1>404 - Not Found</h1>}/>
           </Switch>
       </div>
     </div>
